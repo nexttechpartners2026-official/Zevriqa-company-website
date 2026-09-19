@@ -1,0 +1,100 @@
+.ctaSection {
+  background-color: var(--background-color);
+  padding: clamp(5.5rem, 10vw, 9rem) 1.25rem; /* px-5 section-pad */
+}
+
+@media (min-width: 640px) {
+  .ctaSection {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.container {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  max-width: 64rem; /* max-w-5xl */
+  margin: 0 auto;
+  border-radius: 3rem; /* rounded-[3rem] */
+  background-color: var(--primary-color);
+  padding: 5rem 1.5rem; /* px-6 py-20 */
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 4rem;
+    padding-right: 4rem; /* sm:px-16 */
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-top: 7rem;
+    padding-bottom: 7rem; /* lg:py-28 */
+  }
+}
+
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.title {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700; /* font-bold */
+  font-family: var(--font-heading);
+  color: #ffffff;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 3rem; /* sm:text-5xl */
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 3.75rem; /* lg:text-6xl */
+  }
+}
+
+.desc {
+  margin-top: 1.5rem; /* mt-6 */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 42rem; /* max-w-2xl */
+  font-size: 1.125rem; /* text-lg */
+  color: rgba(255, 255, 255, 0.8); /* text-white/80 */
+}
+
+.buttonWrapper {
+  margin-top: 2.5rem; /* mt-10 */
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.5rem; /* min-h-14 */
+  border-radius: 9999px; /* rounded-full */
+  background-color: var(--button-color);
+  padding: 0 2.5rem; /* px-10 */
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 700; /* font-bold */
+  color: var(--text-color);
+  box-shadow: 0 16px 36px rgba(88, 129, 87, 0.25); /* shadow-[var(--shadow-button)] */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #ffffff; /* hover:bg-white */
+}

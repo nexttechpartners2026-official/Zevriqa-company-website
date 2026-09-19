@@ -1,0 +1,256 @@
+.footer {
+  background-color: var(--footer-bg);
+  padding: 2rem 1.25rem 6rem; /* pt-8 pb-24 px-5 */
+  color: var(--text-color);
+}
+
+@media (min-width: 640px) {
+  .footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding-bottom: 2.5rem; /* md:pb-10 */
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    padding-top: 3rem; /* lg:pt-12 */
+  }
+}
+
+.container {
+  max-width: 80rem; /* max-w-7xl */
+  margin: 0 auto;
+  border-top: 1px solid rgba(88, 129, 87, 0.32); /* border-[var(--glass-border)] */
+  padding-top: 1.5rem; /* pt-6 */
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-top: 2rem; /* lg:pt-8 */
+  }
+}
+
+.topSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* gap-8 */
+}
+
+@media (min-width: 1024px) {
+  .topSection {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem; /* lg:gap-12 */
+  }
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .brand {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+.logoWrapper {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--accent-color);
+  transition: opacity 0.3s ease;
+}
+
+.logoWrapper:hover {
+  opacity: 0.7;
+}
+
+.logo {
+  font-size: 1.875rem; /* text-3xl */
+  font-family: var(--font-logo);
+}
+
+@media (min-width: 768px) {
+  .logo {
+    font-size: 2.25rem; /* md:text-4xl */
+  }
+}
+
+.logoSubtitle {
+  margin-top: 0.25rem; /* mt-1 */
+  text-align: center;
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.34em;
+  color: var(--logo-subtitle-color);
+}
+
+.desc {
+  margin-top: 1rem; /* mt-4 */
+  max-width: 24rem; /* max-w-sm */
+  font-size: 0.875rem; /* text-sm */
+  line-height: 1.75rem; /* leading-7 */
+  color: var(--text-muted);
+}
+
+.linksWrapper {
+  margin: 0 auto;
+  display: grid;
+  width: 100%;
+  max-width: 48rem; /* max-w-3xl */
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 2rem; /* gap-8 */
+}
+
+@media (min-width: 640px) {
+  .linksWrapper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem; /* sm:gap-10 */
+  }
+}
+
+@media (min-width: 1024px) {
+  .linksWrapper {
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+    min-width: 520px;
+    justify-items: start;
+    gap: 4rem; /* lg:gap-16 */
+  }
+}
+
+.linkGroup {
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .linkGroup {
+    text-align: left;
+  }
+}
+
+.linkTitle {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--text-color);
+}
+
+.links {
+  margin-top: 1rem; /* mt-4 */
+  display: grid;
+  gap: 0.5rem; /* gap-2 */
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.links a {
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: var(--text-color);
+}
+
+.contactDetails {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contactItem {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  color: var(--text-muted);
+}
+
+.socials {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .socials {
+    justify-content: flex-start;
+  }
+}
+
+.socials a {
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials a:hover {
+  color: var(--primary-color);
+}
+
+.bottomSection {
+  margin: 2rem auto 0; /* mt-8 */
+  display: flex;
+  max-width: 80rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem; /* gap-2 */
+  font-size: 0.75rem; /* text-xs */
+  color: var(--text-muted);
+}
+
+@media (min-width: 640px) {
+  .bottomSection {
+    margin-top: 1.5rem; /* sm:mt-6 */
+    flex-direction: row;
+    gap: 1rem; /* sm:gap-4 */
+  }
+}
+
+@media (min-width: 1024px) {
+  .bottomSection {
+    margin-top: 2.5rem; /* lg:mt-10 */
+  }
+}
+
+.copy {
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .copy {
+    text-align: left;
+  }
+}
+
+.tagline {
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .tagline {
+    text-align: right;
+  }
+}

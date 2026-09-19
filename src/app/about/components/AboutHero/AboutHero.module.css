@@ -1,0 +1,81 @@
+.heroSection {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: var(--surface-color);
+  padding: 8rem 1.25rem 4rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+@media (min-width: 640px) {
+  .heroSection {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroSection {
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: -1;
+  width: 32rem;
+  height: 32rem;
+}
+
+.orbSage {
+  background-color: var(--sage-soft);
+  top: -10rem;
+  left: -10rem;
+}
+
+.orbTerracotta {
+  background-color: var(--terracotta-soft);
+  bottom: -10rem;
+  right: -10rem;
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+  max-width: 80rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  color: var(--text-color);
+  margin-bottom: 0;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 3.75rem;
+  }
+}
+
+.subtitle {
+  max-width: 42rem;
+  margin: 1rem auto 0;
+  font-size: 1.125rem;
+  color: var(--text-muted);
+}

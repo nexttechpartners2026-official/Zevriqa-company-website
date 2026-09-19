@@ -1,0 +1,125 @@
+.blogSection {
+  background-color: var(--background-color);
+  padding: clamp(5.5rem, 10vw, 9rem) 1.25rem; /* px-5 section-pad */
+}
+
+@media (min-width: 640px) {
+  .blogSection {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.container {
+  max-width: 80rem; /* max-w-7xl */
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem; /* gap-6 */
+  margin-bottom: 3rem; /* mb-12 */
+}
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    align-items: flex-end; /* md:items-end */
+  }
+}
+
+.kicker {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.title {
+  margin-top: 1rem;
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 600;
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 3rem; /* sm:text-5xl */
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 2rem; /* gap-8 */
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* sm:grid-cols-2 */
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* lg:grid-cols-3 */
+  }
+}
+
+.card {
+  display: block;
+  overflow: hidden;
+  border-radius: 1.5rem; /* rounded-3xl */
+  background-color: var(--surface-color);
+  border: 1px solid rgba(88, 129, 87, 0.32); /* border-[var(--glass-border)] */
+  transition: box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 22px 70px rgba(31, 46, 35, 0.08); /* shadow-[var(--shadow-soft)] */
+}
+
+.imageWrapper {
+  aspect-ratio: 16 / 9; /* aspect-video */
+  overflow: hidden;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05); /* group-hover:scale-105 */
+}
+
+.content {
+  padding: 1.5rem; /* p-6 */
+}
+
+.date {
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 700; /* font-bold */
+  text-transform: uppercase;
+  letter-spacing: 0.05em; /* tracking-wider */
+  color: var(--text-muted);
+}
+
+.cardTitle {
+  margin-top: 0.5rem; /* mt-2 */
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700;
+  color: var(--text-color);
+  transition: color 0.2s ease;
+}
+
+.card:hover .cardTitle {
+  color: var(--accent-color); /* group-hover:text-[var(--accent-color)] */
+}

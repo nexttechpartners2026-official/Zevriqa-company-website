@@ -1,0 +1,82 @@
+:root {
+  --bg-primary: #f6f5ec;
+  --bg-secondary: #ffffff;
+  --bg-green-dark: #4d6653;
+  --bg-green-light: #e4efe4;
+  --text-primary: #1a1a1a;
+  --text-secondary: #5e6b5d;
+  --text-light: #ffffff;
+  --border-color: #d1d5db;
+  --font-heading: var(--font-lora), serif;
+  --font-body: var(--font-montserrat), sans-serif;
+  --font-logo: var(--font-playfair), serif;
+  --color-white:white;
+
+  /* Zevriqa Design System Tokens */
+  --primary-color: #4A6B53;
+  --primary-hover: #A5BA95;
+  --secondary-color: #E9EDDF;
+  --accent-color: #588157;
+  --logo-subtitle-color: #543323;
+  --button-color: #C0CFB2;
+  --background-color: #FAF9F6;
+  --surface-color: #F1F4EB;
+  --footer-bg: #EAEEDF;
+  --text-color: #1F2E23;
+  --text-muted: #4B6353;
+  --glass-bg: rgba(250, 249, 246, 0.72);
+  --glass-border: rgba(88, 129, 87, 0.32);
+  --nav-bg: rgba(250, 249, 246, 0.78);
+  --field-bg: rgba(255, 255, 255, 0.6);
+  --sage-soft: rgba(88, 129, 87, 0.15);
+  --sage-dark: #3A5A40;
+  --terracotta-soft: rgba(163, 177, 138, 0.22);
+  --shadow-soft: 0 22px 70px rgba(31, 46, 35, 0.08);
+  --shadow-button: 0 16px 36px rgba(88, 129, 87, 0.25);
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-primary);
+  /* background: var(--bg-primary); */
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+}

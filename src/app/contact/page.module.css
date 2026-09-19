@@ -1,0 +1,245 @@
+.hero {
+  position: relative;
+  background-color: var(--background-color);
+  padding: clamp(6rem, 12vw, 10rem) 1.25rem 4rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.heroOrbLeft, .heroOrbRight {
+  position: absolute;
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.heroOrbLeft {
+  top: -10rem;
+  left: -10rem;
+  background-color: var(--sage-soft);
+}
+
+.heroOrbRight {
+  top: -5rem;
+  right: -10rem;
+  background-color: rgba(165, 186, 149, 0.2);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.heroDesc {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+.contactSection {
+  padding: 6rem 1.25rem 8rem;
+  background-color: var(--background-color);
+}
+
+@media (min-width: 640px) {
+  .contactSection {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .contactGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8rem;
+  }
+}
+
+.kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.desc {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .infoGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--sage-soft);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.icon {
+  color: var(--primary-color);
+}
+
+.infoTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+
+.infoLink {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.infoLink:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.formContainer {
+  background-color: var(--color-white);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .formRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-color);
+}
+
+.input, .textarea {
+  width: 100%;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-color);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input::placeholder, .textarea::placeholder {
+  color: #9ca3af;
+}
+
+.input:focus, .textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--sage-soft);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submitBtn {
+  background-color: var(--button-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.submitBtn:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}

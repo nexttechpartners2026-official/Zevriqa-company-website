@@ -1,0 +1,137 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.navContainer {
+  margin: 0 auto;
+  display: flex;
+  max-width: calc(80rem + 4rem); /* 1344px */
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .navContainer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.logoWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.logoWrapper:hover {
+  opacity: 0.7;
+}
+
+.logoText {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: #2b3a30;
+}
+
+@media (min-width: 640px) {
+  .logoText {
+    font-size: 1.875rem;
+  }
+}
+
+.logoSubtitle {
+  margin-top: 0.25rem;
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.34em;
+  color: #796856;
+}
+
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+  .desktopNav {
+    display: flex;
+  }
+}
+
+@media (min-width: 1280px) {
+  .desktopNav {
+    gap: 2rem;
+  }
+}
+
+.navLink {
+  transition: color 0.2s;
+  color: var(--text-primary);
+}
+
+.navLink:hover {
+  color: var(--bg-green-dark);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: var(--bg-green-light);
+  color: #1a271f;
+  padding: 0 1.5rem;
+  font-weight: 600;
+  min-height: 2.5rem;
+  height: 2.5rem;
+  margin-left: 0.5rem;
+  transition: background-color 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.cta:hover {
+  background-color: #d1e3d1;
+}
+
+.mobileMenuBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  min-height: 2.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mobileMenuBtn:hover {
+  background-color: #f3f4f6;
+}
+
+@media (min-width: 1024px) {
+  .mobileMenuBtn {
+    display: none;
+  }
+}
