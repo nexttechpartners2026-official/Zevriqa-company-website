@@ -2,8 +2,8 @@ import styles from './Tools.module.css';
 
 export default function Tools() {
   const tools = [
-    'React', 'Node.js', 'Python', 'Go', 'AWS', 'Google Cloud',
-    'Docker', 'Kubernetes', 'PostgreSQL', 'MongoDB', 'GraphQL', 'TypeScript'
+    'React', 'Node.js', 'Next.js', 'TypeScript', 'AWS', 'Google Cloud',
+    'Docker', 'Oracle DB', 'PostgreSQL', 'MongoDB', 'GraphQL', 'Express.js'
   ];
 
   return (

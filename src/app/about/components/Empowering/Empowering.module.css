@@ -94,6 +94,7 @@
 
 .button:hover {
   background-color: var(--primary-hover);
+  color: var(--text-light);
 }
 
 .imageWrapper {

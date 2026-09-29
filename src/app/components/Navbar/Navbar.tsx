@@ -2,8 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import styles from './Navbar.module.css';
+import logoImage from '@/assets/images/zevriqa-logo-no-bg.png';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,8 +17,7 @@ export default function Navbar() {
     <header className={styles.header}>
       <nav className={styles.navContainer} aria-label="Main navigation">
         <Link href="/" className={styles.logoWrapper} aria-label="Zevriqa Home" onClick={closeMenu}>
-          <span className={styles.logoText}>Zevriqa</span>
-          <span className={styles.logoSubtitle}>- Digital Solutions -</span>
+          <Image src={logoImage} alt="Zevriqa Logo" className={styles.logoImage} />
         </Link>
         
         <div className={styles.desktopNav}>

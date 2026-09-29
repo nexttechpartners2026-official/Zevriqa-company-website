@@ -3,7 +3,7 @@ import styles from './Stats.module.css';
 export default function Stats() {
   const stats = [
     {
-      number: '250+',
+      number: '2+',
       label: 'Projects Delivered',
     },
     {
@@ -11,11 +11,11 @@ export default function Stats() {
       label: 'Uptime SLA',
     },
     {
-      number: '50+',
+      number: '5+',
       label: 'Senior Engineers',
     },
     {
-      number: '10+',
+      number: '1',
       label: 'Years Experience',
     },
   ];

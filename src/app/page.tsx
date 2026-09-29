@@ -1,4 +1,7 @@
 import Navbar from '@/app/components/Navbar/Navbar';
+import VideoBanner from '@/app/components/VideoBanner/VideoBanner';
+import ImageCarousel from '@/app/components/ImageCarousel/ImageCarousel';
+import SingleImage from '@/app/components/SingleImage/SingleImage';
 import Hero from '@/app/components/Hero/Hero';
 import TrustedBy from '@/app/components/TrustedBy/TrustedBy';
 import About from '@/app/components/About/About';
@@ -19,6 +22,10 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      {/* Show only one of the below three components based on preference */}
+      <VideoBanner />
+      {/* <ImageCarousel /> */}
+      {/* <SingleImage /> */}
       <Hero />
       <TrustedBy />
       <About />

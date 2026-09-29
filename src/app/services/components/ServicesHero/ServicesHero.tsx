@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './ServicesHero.module.css';
 
 export default function ServicesHero() {
@@ -10,7 +11,7 @@ export default function ServicesHero() {
         <p className={styles.heroDesc}>
           Comprehensive digital solutions tailored to scale, secure, and accelerate your business.
         </p>
-        <button className={styles.heroBtn}>Let's Talk</button>
+        <Link href="/contact" className={styles.heroBtn}>Let's Talk</Link>
       </div>
     </section>
   );

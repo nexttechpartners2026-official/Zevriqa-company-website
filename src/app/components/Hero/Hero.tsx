@@ -1,6 +1,7 @@
 import styles from './Hero.module.css';
-import BannerImage from "../../../assets/images/banner-image.avif"
+import BannerImage from "../../../assets/images/banner-image.webp"
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -16,7 +17,9 @@ export default function Hero() {
             Zevriqa engineers reliable custom software and cloud applications that streamline operations, improve performance, and support long-term growth.
           </p>
           <div className={styles.actions}>
-            <button className={styles.primaryBtn}>Explore Capabilities</button>
+            <Link href="services">
+              <p className={styles.primaryBtn}>Explore Capabilities</p>
+            </Link>
           </div>
         </div>
 

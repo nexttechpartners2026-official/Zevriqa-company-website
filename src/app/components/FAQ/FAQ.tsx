@@ -43,11 +43,13 @@ export default function FAQ() {
               {faq.q}
               {openIndex === i ? <Minus size={20} /> : <Plus size={20} />}
             </button>
-            {openIndex === i && (
+            <div className={`${styles.answerWrapper} ${openIndex === i ? styles.open : ''}`}>
               <div className={styles.answer}>
-                {faq.a}
+                <div className={styles.answerInner}>
+                  {faq.a}
+                </div>
               </div>
-            )}
+            </div>
           </div>
         ))}
       </div>

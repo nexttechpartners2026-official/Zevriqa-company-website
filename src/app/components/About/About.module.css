@@ -1,6 +1,44 @@
 .aboutSection {
   background-color: var(--surface-color);
   padding: clamp(5.5rem, 10vw, 9rem) 1.25rem; /* px-5 section-pad */
+  position: relative;
+  overflow: hidden;
+}
+
+.bgLogoWrapper {
+  position: absolute;
+  top: 10%;
+  right: -10%;
+  width: 60%;
+  min-width: 200px;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .bgLogoWrapper {
+    top: 20%;
+    right: -5%;
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bgLogoWrapper {
+    top: 30%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 40%;
+    min-width: 300px;
+    opacity: 0.25;
+  }
+}
+
+.bgLogo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 @media (min-width: 640px) {
@@ -16,6 +54,8 @@
   display: grid;
   align-items: center;
   gap: 3rem; /* gap-12 */
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 1024px) {
@@ -34,7 +74,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
@@ -49,10 +89,11 @@
 
 .archImage {
   width: 100%;
+  height: auto;
   aspect-ratio: 4/5;
   object-fit: cover;
-  border-top-left-radius: 250px;
-  border-top-right-radius: 250px;
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }

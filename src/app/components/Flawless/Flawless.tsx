@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import styles from './Flawless.module.css';
+import WhyZevriza from "@/assets/images/why-zevriqa-image.webp"
 
 export default function Flawless() {
   const features = [
@@ -40,8 +42,8 @@ export default function Flawless() {
       </div>
 
       <div className={styles.imageWrapper}>
-        <img
-          src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        <Image
+          src={WhyZevriza}
           alt="Analytics team"
           className={styles.archImage}
         />

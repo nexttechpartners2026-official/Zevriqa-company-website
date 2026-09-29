@@ -79,26 +79,22 @@
   opacity: 0.7;
 }
 
-.logo {
-  font-size: 1.875rem; /* text-3xl */
-  font-family: var(--font-logo);
+.logoImage {
+  width: auto;
+  height: 40px;
+  object-fit: contain;
 }
 
-@media (min-width: 768px) {
-  .logo {
-    font-size: 2.25rem; /* md:text-4xl */
+@media (min-width: 640px) {
+  .logoImage {
+    height: 50px;
   }
 }
 
-.logoSubtitle {
-  margin-top: 0.25rem; /* mt-1 */
-  text-align: center;
-  font-size: 0.75rem; /* text-xs */
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: 0.34em;
-  color: var(--logo-subtitle-color);
+@media (min-width: 1024px) {
+  .logoImage {
+    height: 60px;
+  }
 }
 
 .desc {
@@ -198,7 +194,7 @@
 }
 
 .socials a {
-  color: var(--text-muted);
+  color:black;
   transition: color 0.3s ease;
   display: flex;
   align-items: center;

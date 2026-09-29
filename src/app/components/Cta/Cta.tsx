@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './Cta.module.css';
 
 export default function Cta() {
@@ -10,9 +11,9 @@ export default function Cta() {
           Let's discuss how Zevriqa can engineer the right software solution to accelerate your business goals.
         </p>
         <div className={styles.buttonWrapper}>
-          <a href="#" className={styles.button}>
+          <Link href="/contact" className={styles.button}>
             Start a Project
-          </a>
+          </Link>
         </div>
       </div>
     </section>

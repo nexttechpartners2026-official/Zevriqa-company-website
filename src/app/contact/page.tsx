@@ -41,7 +41,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className={styles.infoTitle}>Email</h3>
-                      <a href="mailto:hello@zevriqa.com" className={styles.infoLink}>hello@zevriqa.com</a>
+                      <a href="zevriqasolutions@gmail.com" className={styles.infoLink}>zevriqasolutions@gmail.com</a>
                     </div>
                   </div>
 
@@ -51,7 +51,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className={styles.infoTitle}>Phone</h3>
-                      <a href="tel:+15551234567" className={styles.infoLink}>+1 (555) 123-4567</a>
+                      <a href="tel:+917994398200" className={styles.infoLink}>+91-7994398200</a>
+                      <a href="tel:+917994532263" className={styles.infoLink}>+91-7994532263</a>
                     </div>
                   </div>
 
@@ -61,7 +62,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className={styles.infoTitle}>WhatsApp</h3>
-                      <a href="https://wa.me/15559876543?text=Hello%20Zevriqa,%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" className={styles.infoLink}>+1 (555) 987-6543</a>
+                      <a href="https://wa.me/+917994532263?text=Hello%20Zevriqa,%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" className={styles.infoLink}>+91-7994532263</a>
                     </div>
                   </div>
 

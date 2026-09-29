@@ -1,22 +1,28 @@
 import styles from './Sectors.module.css';
+import WebsiteMockup from "@/assets/images/axomechoman-mockup.png";
+import DigitalmarketingMockup from "@/assets/images/digital-marketing-image.webp";
+import BrandingMockup from "@/assets/images/branding-image.webp";
+import MobileAppDevelopment from "@/assets/images/mobile-app-development-image.webp";
+import Image from 'next/image';
+
 
 export default function Sectors() {
   const sectors = [
     {
-      title: 'FinTech & Banking',
-      image: 'https://files.cdn-files-a.com/uploads/12396961/800_gi-6aae1bbe4b421.jpg?format=avif',
+      title: 'Website Development',
+      image: WebsiteMockup,
     },
     {
-      title: 'Healthcare & HealthTech',
-      image: 'https://files.cdn-files-a.com/uploads/12396961/800_gi-6aae1bbe4b427.jpg?format=avif',
+      title: 'Digital Marketing',
+      image: DigitalmarketingMockup,
     },
     {
-      title: 'Retail & E-Commerce',
-      image: 'https://files.cdn-files-a.com/uploads/12396961/800_gi-6aae1bbe4b42c.jpg?format=avif',
+      title: 'Branding',
+      image: BrandingMockup,
     },
     {
-      title: 'Logistics & Supply Chain',
-      image: 'https://files.cdn-files-a.com/uploads/12396961/800_gi-6aae1bbe4b431.jpg?format=avif',
+      title: 'Mobile App Development',
+      image: MobileAppDevelopment,
     },
   ];
 
@@ -30,7 +36,7 @@ export default function Sectors() {
       <div className={styles.grid}>
         {sectors.map((sector, i) => (
           <div key={i} className={styles.card}>
-            <img src={sector.image} alt={sector.title} className={styles.image} />
+            <Image src={sector.image} alt={sector.title} className={styles.image} fill sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw' />
             <div className={styles.overlay}></div>
             <div className={styles.cardContent}>
               <h3 className={styles.cardTitle}>{sector.title}</h3>
