@@ -32,6 +32,8 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
 };
 
+import FloatingWidgets from '@/app/components/FloatingWidgets/FloatingWidgets';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -39,7 +41,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${lora.variable} ${montserrat.variable} ${playfair.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <FloatingWidgets />
+      </body>
     </html>
   );
 }

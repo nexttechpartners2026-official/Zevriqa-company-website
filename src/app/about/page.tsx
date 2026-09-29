@@ -7,6 +7,7 @@ import Journey from '@/app/about/components/Journey/Journey';
 import Mission from '@/app/about/components/Mission/Mission';
 import Values from '@/app/about/components/Values/Values';
 import Different from '@/app/about/components/Different/Different';
+import FadeIn from '@/app/components/FadeIn/FadeIn';
 
 export const metadata = {
   title: 'About Us | Zevriqa',
@@ -18,14 +19,14 @@ export default function AboutPage() {
     <>
       <Navbar />
       <main>
-        <AboutHero />
-        <Empowering />
-        <Journey />
-        <Mission />
-        <Values />
-        <Different />
+        <FadeIn direction="up" delay={100}><AboutHero /></FadeIn>
+        <FadeIn direction="up" delay={100}><Empowering /></FadeIn>
+        <FadeIn direction="up" delay={100}><Journey /></FadeIn>
+        <FadeIn direction="up" delay={100}><Mission /></FadeIn>
+        <FadeIn direction="up" delay={100}><Values /></FadeIn>
+        <FadeIn direction="up" delay={100}><Different /></FadeIn>
       </main>
-      <Cta />
+      <FadeIn direction="up" delay={100}><Cta /></FadeIn>
       <Footer />
     </>
   );

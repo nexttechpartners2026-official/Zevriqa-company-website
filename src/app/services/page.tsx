@@ -10,6 +10,7 @@ import DomainExpertise from './components/DomainExpertise/DomainExpertise';
 import StatsBanner from './components/StatsBanner/StatsBanner';
 import CaseStudies from './components/CaseStudies/CaseStudies';
 import FaqAccordion from './components/FaqAccordion/FaqAccordion';
+import FadeIn from '@/app/components/FadeIn/FadeIn';
 
 export const metadata = {
   title: 'Our Services | Zevriqa',
@@ -21,17 +22,17 @@ export default function ServicesPage() {
     <>
       <Navbar />
       <main>
-        <ServicesHero />
-        <ServicesOverview />
-        <ServiceDetails />
-        <TechStack />
-        <ProcessSteps />
-        <DomainExpertise />
-        <StatsBanner />
-        <CaseStudies />
-        <FaqAccordion />
+        <FadeIn direction="up" delay={100}><ServicesHero /></FadeIn>
+        <FadeIn direction="up" delay={100}><ServicesOverview /></FadeIn>
+        <FadeIn direction="up" delay={100}><ServiceDetails /></FadeIn>
+        <FadeIn direction="up" delay={100}><TechStack /></FadeIn>
+        <FadeIn direction="up" delay={100}><ProcessSteps /></FadeIn>
+        <FadeIn direction="up" delay={100}><DomainExpertise /></FadeIn>
+        <FadeIn direction="up" delay={100}><StatsBanner /></FadeIn>
+        <FadeIn direction="up" delay={100}><CaseStudies /></FadeIn>
+        <FadeIn direction="up" delay={100}><FaqAccordion /></FadeIn>
       </main>
-      <Cta />
+      <FadeIn direction="up" delay={100}><Cta /></FadeIn>
       <Footer />
     </>
   );
