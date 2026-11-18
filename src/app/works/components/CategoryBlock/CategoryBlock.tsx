@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState } from 'react';
 import styles from './CategoryBlock.module.css';
@@ -13,15 +13,15 @@ export default function CategoryBlock({ title, items }: CategoryBlockProps) {
   const [visibleCount, setVisibleCount] = useState(4);
 
   const handleShowMore = () => {
-    setVisibleCount(prev => prev + 4);
+    setVisibleCount((prev) => prev + 4);
   };
 
   return (
     <div className={styles.categoryBlock}>
       <h2 className={styles.categoryTitle}>{title}</h2>
       <div className={styles.grid}>
-        {items.slice(0, visibleCount).map((item) => (
-          <WorkCard key={item.id} item={item} />
+        {items.slice(0, visibleCount).map((item, idx) => (
+          <WorkCard key={item.id ?? idx} item={item} />
         ))}
       </div>
       {visibleCount < items.length && (

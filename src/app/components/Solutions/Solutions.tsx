@@ -1,8 +1,16 @@
 import styles from './Solutions.module.css';
 import { CheckCircle2 } from 'lucide-react';
+import { SolutionsData } from '@/types/cms';
 
-export default function Solutions() {
-  const solutions = [
+interface SolutionsProps {
+  data?: SolutionsData;
+}
+
+export default function Solutions({ data }: SolutionsProps) {
+  const kicker = data?.kicker || 'Solutions We Build';
+  const title = data?.title || 'Engineered for specific business needs.';
+
+  const defaultSolutions = [
     {
       title: 'Enterprise ERP Systems',
       desc: 'Centralized resource planning platforms that streamline operations, HR, finance, and supply chain logistics.',
@@ -21,16 +29,18 @@ export default function Solutions() {
     },
   ];
 
+  const solutions = data?.items && data.items.length > 0 ? data.items : defaultSolutions;
+
   return (
     <section className={styles.solutionsSection}>
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.headerContent}>
-            <p className={styles.kicker}>Solutions We Build</p>
-            <h2 className={styles.title}>Engineered for specific business needs.</h2>
+            <p className={styles.kicker}>{kicker}</p>
+            <h2 className={styles.title}>{title}</h2>
           </div>
         </div>
-        
+
         <div className={styles.grid}>
           {solutions.map((solution, i) => (
             <div key={i} className={styles.card}>

@@ -1,7 +1,12 @@
 import styles from './Stats.module.css';
+import { StatsData } from '@/types/cms';
 
-export default function Stats() {
-  const stats = [
+interface StatsProps {
+  data?: StatsData;
+}
+
+export default function Stats({ data }: StatsProps) {
+  const defaultStats = [
     {
       number: '2+',
       label: 'Projects Delivered',
@@ -19,6 +24,8 @@ export default function Stats() {
       label: 'Years Experience',
     },
   ];
+
+  const stats = data?.items && data.items.length > 0 ? data.items : defaultStats;
 
   return (
     <section className={styles.statsSection}>

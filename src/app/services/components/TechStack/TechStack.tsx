@@ -1,6 +1,7 @@
 import styles from './TechStack.module.css';
+import { TechStackData, TechCategoryItem } from '@/types/cms';
 
-const TECH_CATEGORIES = [
+const DEFAULT_CATEGORIES: TechCategoryItem[] = [
   {
     title: 'Frontend',
     tools: ['React', 'Next.js', 'Vue.js', 'TypeScript', 'Tailwind CSS']
@@ -27,24 +28,35 @@ const TECH_CATEGORIES = [
   }
 ];
 
-export default function TechStack() {
+interface TechStackProps {
+  data?: TechStackData;
+}
+
+export default function TechStack({ data }: TechStackProps) {
+  const kicker = data?.kicker || 'Our Technology Stack';
+  const title = data?.title || 'Tools we use to build.';
+  const categories = data?.categories && data.categories.length > 0 ? data.categories : DEFAULT_CATEGORIES;
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <p className={styles.kicker}>Our Technology Stack</p>
-        <h2 className={styles.title}>Tools we use to build.</h2>
+        <p className={styles.kicker}>{kicker}</p>
+        <h2 className={styles.title}>{title}</h2>
 
         <div className={styles.grid}>
-          {TECH_CATEGORIES.map((cat, index) => (
-            <div key={index} className={styles.card}>
-              <h3 className={styles.cardTitle}>{cat.title}</h3>
-              <div className={styles.tags}>
-                {cat.tools.map((tool, idx) => (
-                  <span key={idx} className={styles.tag}>{tool}</span>
-                ))}
+          {categories.map((cat, index) => {
+            const toolsList = (cat.tools || []).map((t) => (typeof t === 'string' ? t : t.name));
+            return (
+              <div key={cat.id || index} className={styles.card}>
+                <h3 className={styles.cardTitle}>{cat.title}</h3>
+                <div className={styles.tags}>
+                  {toolsList.map((tool, idx) => (
+                    <span key={idx} className={styles.tag}>{tool}</span>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

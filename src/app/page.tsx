@@ -17,31 +17,37 @@ import Blog from '@/app/components/Blog/Blog';
 import FAQ from '@/app/components/FAQ/FAQ';
 import Cta from '@/app/components/Cta/Cta';
 import Footer from '@/app/components/Footer/Footer';
-
 import FadeIn from '@/app/components/FadeIn/FadeIn';
 
-export default function Home() {
+import { getHomePageData } from '@/lib/cms';
+
+export default async function Home() {
+  const cmsData = await getHomePageData();
+  const bannerType = cmsData?.banner?.type || 'video';
+
   return (
     <>
       <Navbar />
-      {/* Show only one of the below three components based on preference */}
-      <VideoBanner />
-      {/* <ImageCarousel /> */}
-      {/* <SingleImage /> */}
-      <FadeIn direction="up" delay={100}><Hero /></FadeIn>
-      <FadeIn direction="up" delay={100}><TrustedBy /></FadeIn>
-      <FadeIn direction="up" delay={100}><About /></FadeIn>
-      <FadeIn direction="up" delay={100}><Features /></FadeIn>
-      <FadeIn direction="up" delay={100}><Solutions /></FadeIn>
-      <FadeIn direction="up" delay={100}><Sectors /></FadeIn>
-      <FadeIn direction="up" delay={100}><Tools /></FadeIn>
-      <FadeIn direction="up" delay={100}><Process /></FadeIn>
-      <FadeIn direction="up" delay={100}><Flawless /></FadeIn>
-      <FadeIn direction="up" delay={100}><Stats /></FadeIn>
-      <FadeIn direction="up" delay={100}><Testimonials /></FadeIn>
-      <FadeIn direction="up" delay={100}><Blog /></FadeIn>
-      <FadeIn direction="up" delay={100}><FAQ /></FadeIn>
-      <FadeIn direction="up" delay={100}><Cta /></FadeIn>
+
+      {/* Top Banner configured via CMS */}
+      {bannerType === 'video' && <VideoBanner videoUrl={cmsData?.banner?.videoUrl} />}
+      {bannerType === 'carousel' && <ImageCarousel slides={cmsData?.banner?.carouselSlides} />}
+      {bannerType === 'singleImage' && <SingleImage data={cmsData?.banner?.singleImage} />}
+
+      <FadeIn direction="up" delay={100}><Hero data={cmsData?.hero} /></FadeIn>
+      <FadeIn direction="up" delay={100}><TrustedBy data={cmsData?.trustedBy} /></FadeIn>
+      <FadeIn direction="up" delay={100}><About data={cmsData?.about} /></FadeIn>
+      <FadeIn direction="up" delay={100}><Features data={cmsData?.features} /></FadeIn>
+      <FadeIn direction="up" delay={100}><Solutions data={cmsData?.solutions} /></FadeIn>
+      <FadeIn direction="up" delay={100}><Sectors data={cmsData?.sectors} /></FadeIn>
+      <FadeIn direction="up" delay={100}><Tools data={cmsData?.tools} /></FadeIn>
+      <FadeIn direction="up" delay={100}><Process data={cmsData?.process} /></FadeIn>
+      <FadeIn direction="up" delay={100}><Flawless data={cmsData?.flawless} /></FadeIn>
+      <FadeIn direction="up" delay={100}><Stats data={cmsData?.stats} /></FadeIn>
+      <FadeIn direction="up" delay={100}><Testimonials data={cmsData?.testimonials} /></FadeIn>
+      <FadeIn direction="up" delay={100}><Blog data={cmsData?.blog} /></FadeIn>
+      <FadeIn direction="up" delay={100}><FAQ data={cmsData?.faq} /></FadeIn>
+      <FadeIn direction="up" delay={100}><Cta data={cmsData?.cta} /></FadeIn>
       <Footer />
     </>
   );

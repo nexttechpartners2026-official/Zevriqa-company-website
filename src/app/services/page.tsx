@@ -11,28 +11,31 @@ import StatsBanner from './components/StatsBanner/StatsBanner';
 import CaseStudies from './components/CaseStudies/CaseStudies';
 import FaqAccordion from './components/FaqAccordion/FaqAccordion';
 import FadeIn from '@/app/components/FadeIn/FadeIn';
+import { getServicesPageData } from '@/lib/cms';
 
 export const metadata = {
   title: 'Our Services | Zevriqa',
   description: 'Explore the digital solutions Zevriqa offers, from custom software to cloud architecture.',
 };
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const cmsData = await getServicesPageData();
+
   return (
     <>
       <Navbar />
       <main>
-        <FadeIn direction="up" delay={100}><ServicesHero /></FadeIn>
-        <FadeIn direction="up" delay={100}><ServicesOverview /></FadeIn>
-        <FadeIn direction="up" delay={100}><ServiceDetails /></FadeIn>
-        <FadeIn direction="up" delay={100}><TechStack /></FadeIn>
-        <FadeIn direction="up" delay={100}><ProcessSteps /></FadeIn>
-        <FadeIn direction="up" delay={100}><DomainExpertise /></FadeIn>
-        <FadeIn direction="up" delay={100}><StatsBanner /></FadeIn>
-        <FadeIn direction="up" delay={100}><CaseStudies /></FadeIn>
-        <FadeIn direction="up" delay={100}><FaqAccordion /></FadeIn>
+        <FadeIn direction="up" delay={100}><ServicesHero data={cmsData?.hero} /></FadeIn>
+        <FadeIn direction="up" delay={100}><ServicesOverview data={cmsData?.overview} /></FadeIn>
+        <FadeIn direction="up" delay={100}><ServiceDetails data={cmsData?.details} /></FadeIn>
+        <FadeIn direction="up" delay={100}><TechStack data={cmsData?.techStack} /></FadeIn>
+        <FadeIn direction="up" delay={100}><ProcessSteps data={cmsData?.process} /></FadeIn>
+        <FadeIn direction="up" delay={100}><DomainExpertise data={cmsData?.domainExpertise} /></FadeIn>
+        <FadeIn direction="up" delay={100}><StatsBanner data={cmsData?.statsBanner} /></FadeIn>
+        <FadeIn direction="up" delay={100}><CaseStudies data={cmsData?.caseStudies} /></FadeIn>
+        <FadeIn direction="up" delay={100}><FaqAccordion data={cmsData?.faq} /></FadeIn>
       </main>
-      <FadeIn direction="up" delay={100}><Cta /></FadeIn>
+      <FadeIn direction="up" delay={100}><Cta data={cmsData?.cta} /></FadeIn>
       <Footer />
     </>
   );

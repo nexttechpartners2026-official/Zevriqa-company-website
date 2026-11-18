@@ -1,7 +1,15 @@
 import styles from './Process.module.css';
+import { ProcessData } from '@/types/cms';
 
-export default function Process() {
-  const steps = [
+interface ProcessProps {
+  data?: ProcessData;
+}
+
+export default function Process({ data }: ProcessProps) {
+  const kicker = data?.kicker || 'Our Development Process';
+  const title = data?.title || 'How we deliver success.';
+
+  const defaultSteps = [
     {
       num: '01',
       title: 'Discovery & Architecture',
@@ -24,14 +32,16 @@ export default function Process() {
     },
   ];
 
+  const steps = data?.steps && data.steps.length > 0 ? data.steps : defaultSteps;
+
   return (
     <section className={styles.processSection}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <p className={styles.kicker}>Our Development Process</p>
-          <h2 className={styles.title}>How we deliver success.</h2>
+          <p className={styles.kicker}>{kicker}</p>
+          <h2 className={styles.title}>{title}</h2>
         </div>
-        
+
         <div className={styles.grid}>
           {steps.map((step, i) => (
             <div key={i} className={styles.card}>

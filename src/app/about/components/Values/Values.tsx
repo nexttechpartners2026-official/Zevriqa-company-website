@@ -1,51 +1,84 @@
 import styles from './Values.module.css';
-import { Lightbulb, Shield, Users, Gem, Handshake, TrendingUp } from 'lucide-react';
+import {
+  Lightbulb,
+  Shield,
+  Users,
+  Gem,
+  Handshake,
+  TrendingUp,
+  Heart,
+  Zap,
+  CheckCircle,
+  LucideIcon,
+} from 'lucide-react';
+import { ValuesData } from '@/types/cms';
 
-export default function Values() {
-  const values = [
-    {
-      icon: Lightbulb,
-      title: 'Innovation',
-      desc: 'We constantly explore new technologies and architectural patterns to deliver cutting-edge, future-proof solutions.',
-    },
-    {
-      icon: Shield,
-      title: 'Transparency',
-      desc: 'Honest communication, clear expectations, and open collaboration in every client partnership we build.',
-    },
-    {
-      icon: Users,
-      title: 'Customer-First',
-      desc: 'Your business goals dictate our engineering decisions. We succeed only when your business succeeds.',
-    },
-    {
-      icon: Gem,
-      title: 'Quality',
-      desc: 'We never compromise on the security, performance, or scalability of the code we ship to production.',
-    },
-    {
-      icon: Handshake,
-      title: 'Collaboration',
-      desc: 'We integrate seamlessly, working closely as an extension of your internal product and engineering teams.',
-    },
-    {
-      icon: TrendingUp,
-      title: 'Continuous Improvement',
-      desc: 'Always learning, adapting, and refining our processes to stay ahead of an ever-evolving digital landscape.',
-    },
-  ];
+interface ValuesProps {
+  data?: ValuesData;
+}
+
+const iconMap: Record<string, LucideIcon> = {
+  Lightbulb,
+  Shield,
+  Users,
+  Gem,
+  Handshake,
+  TrendingUp,
+  Heart,
+  Zap,
+  CheckCircle,
+};
+
+const defaultValues = [
+  {
+    icon: 'Lightbulb',
+    title: 'Innovation',
+    desc: 'We constantly explore new technologies and architectural patterns to deliver cutting-edge, future-proof solutions.',
+  },
+  {
+    icon: 'Shield',
+    title: 'Transparency',
+    desc: 'Honest communication, clear expectations, and open collaboration in every client partnership we build.',
+  },
+  {
+    icon: 'Users',
+    title: 'Customer-First',
+    desc: 'Your business goals dictate our engineering decisions. We succeed only when your business succeeds.',
+  },
+  {
+    icon: 'Gem',
+    title: 'Quality',
+    desc: 'We never compromise on the security, performance, or scalability of the code we ship to production.',
+  },
+  {
+    icon: 'Handshake',
+    title: 'Collaboration',
+    desc: 'We integrate seamlessly, working closely as an extension of your internal product and engineering teams.',
+  },
+  {
+    icon: 'TrendingUp',
+    title: 'Continuous Improvement',
+    desc: 'Always learning, adapting, and refining our processes to stay ahead of an ever-evolving digital landscape.',
+  },
+];
+
+export default function Values({ data }: ValuesProps) {
+  const kicker = data?.kicker || 'Our Values';
+  const title = data?.title || 'What drives us forward.';
+
+  const values = data?.items && data.items.length > 0 ? data.items : defaultValues;
 
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <p className={styles.kicker}>Our Values</p>
-          <h2 className={styles.title}>What drives us forward.</h2>
+          <p className={styles.kicker}>{kicker}</p>
+          <h2 className={styles.title}>{title}</h2>
         </div>
 
         <div className={styles.grid}>
           {values.map((v, i) => {
-            const Icon = v.icon;
+            const Icon = (v.icon && iconMap[v.icon]) || Lightbulb;
             return (
               <div key={i} className={styles.card}>
                 <div className={styles.iconWrapper}>

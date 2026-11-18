@@ -3,8 +3,9 @@
 import { useState } from 'react';
 import styles from './FaqAccordion.module.css';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ServicesFaqData, ServicesFaqItem } from '@/types/cms';
 
-const FAQS = [
+const DEFAULT_FAQS: ServicesFaqItem[] = [
   {
     question: "Do you provide post-launch support and maintenance?",
     answer: "Yes, we offer comprehensive post-launch support packages, including regular updates, security patching, and performance monitoring to ensure your application runs smoothly long-term."
@@ -23,8 +24,15 @@ const FAQS = [
   }
 ];
 
-export default function FaqAccordion() {
+interface FaqAccordionProps {
+  data?: ServicesFaqData;
+}
+
+export default function FaqAccordion({ data }: FaqAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const title = data?.title || 'Common Service Questions.';
+  const faqs = data?.faqs && data.faqs.length > 0 ? data.faqs : DEFAULT_FAQS;
 
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -33,14 +41,14 @@ export default function FaqAccordion() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Common Service Questions.</h2>
+        <h2 className={styles.title}>{title}</h2>
 
         <div className={styles.accordion}>
-          {FAQS.map((faq, index) => {
+          {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div 
-                key={index} 
+                key={faq.id || index} 
                 className={`${styles.faqItem} ${isOpen ? styles.faqItemOpen : ''}`}
               >
                 <button 

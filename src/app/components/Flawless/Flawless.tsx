@@ -1,35 +1,47 @@
 import Image from 'next/image';
 import styles from './Flawless.module.css';
-import WhyZevriza from "@/assets/images/why-zevriqa-image.webp"
+import WhyZevriza from '@/assets/images/why-zevriqa-image.webp';
+import { FlawlessData } from '@/types/cms';
+import { getMediaUrl } from '@/lib/cms';
 
-export default function Flawless() {
-  const features = [
+interface FlawlessProps {
+  data?: FlawlessData;
+}
+
+export default function Flawless({ data }: FlawlessProps) {
+  const subtitle = data?.subtitle || 'WHY ZEVRIQA';
+  const title = data?.title || 'Every system is designed to help you operate flawlessly.';
+
+  const defaultFeatures = [
     {
-      title: "End-to-End Delivery",
-      desc: "From initial architecture planning and UI/UX to final deployment and ongoing maintenance."
+      title: 'End-to-End Delivery',
+      desc: 'From initial architecture planning and UI/UX to final deployment and ongoing maintenance.',
     },
     {
-      title: "Scalable Architecture",
-      desc: "Built to grow seamlessly as your user base, traffic, and data expand over time."
+      title: 'Scalable Architecture',
+      desc: 'Built to grow seamlessly as your user base, traffic, and data expand over time.',
     },
     {
-      title: "Security First",
-      desc: "Implementing industry best practices to protect your data and ensure strict compliance."
+      title: 'Security First',
+      desc: 'Implementing industry best practices to protect your data and ensure strict compliance.',
     },
     {
-      title: "Ongoing Support",
-      desc: "Dedicated engineering teams ensuring your mission-critical systems run flawlessly 24/7."
-    }
+      title: 'Ongoing Support',
+      desc: 'Dedicated engineering teams ensuring your mission-critical systems run flawlessly 24/7.',
+    },
   ];
+
+  const features = data?.features && data.features.length > 0 ? data.features : defaultFeatures;
+  const cmsImageUrl = getMediaUrl(data?.image);
 
   return (
     <section className={styles.flawlessSection}>
       <div className={styles.content}>
         <div className={styles.subtitle}>
           <span className={styles.line}></span>
-          WHY ZEVRIQA
+          {subtitle}
         </div>
-        <h2 className={styles.title}>Every system is designed to help you operate flawlessly.</h2>
+        <h2 className={styles.title}>{title}</h2>
 
         <div className={styles.grid2x2}>
           {features.map((feature, i) => (
@@ -42,11 +54,19 @@ export default function Flawless() {
       </div>
 
       <div className={styles.imageWrapper}>
-        <Image
-          src={WhyZevriza}
-          alt="Analytics team"
-          className={styles.archImage}
-        />
+        {cmsImageUrl ? (
+          <img
+            src={cmsImageUrl}
+            alt="Why Zevriqa"
+            className={styles.archImage}
+          />
+        ) : (
+          <Image
+            src={WhyZevriza}
+            alt="Why Zevriqa"
+            className={styles.archImage}
+          />
+        )}
       </div>
     </section>
   );
