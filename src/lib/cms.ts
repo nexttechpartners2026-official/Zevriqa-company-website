@@ -1,6 +1,6 @@
 import { HomePageData, AboutPageData, WorksPageData, ServicesPageData, SiteSettingsData, ContactPageData, MediaItem } from '@/types/cms';
 
-const CMS_URL = process.env.NEXT_PUBLIC_CMS_URL || 'http://localhost:3000';
+const CMS_URL = process.env.NEXT_PUBLIC_CMS_URL || 'https://cms.zevriqa.in';
 
 export function getCmsBaseUrl(): string {
   return CMS_URL.replace(/\/$/, '');
